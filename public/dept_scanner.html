@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner and Timer</title>
+    <script src="html5-qrcode.min.js"></script>
+    <style>
+        .notification {
+            padding: 10px;
+            margin: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .notification.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .notification.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .notification.info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="reader"></div>
+        <div id="loading">Scanning...</div>
+        <div id="result"></div>
+        <div id="notification-container"></div> <!-- Notification container -->
+        <button id="stopButton" style="display:none;">Stop Timer</button> <!-- Add Stop Timer button -->
+    </main>
+    <script src="dept_scanner.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Centered Buttons</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+            }
+            .button-container {
+                display: flex;
+                gap: 20px;
+            }
+            button {
+                padding: 15px 30px;
+                font-size: 16px;
+                color: white;
+                background-color: #4CAF50;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            table {
+                margin-top: 20px;
+                border-collapse: collapse;
+                width: 80%;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="button-container">
+            <button onclick="window.location.href='dept_scanner.html'">Scanner</button>
+            <button id="show-scholars-btn">Show Scholars</button>
+        </div>
+
+        <table id="scholars-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Scholar ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="scholars-body"></tbody>
+        </table>
+
+        <script>
+            document.getElementById('show-scholars-btn').addEventListener('click', function() {
+                fetch('/scholars')
+                    .then(response => response.json())
+                    .then(scholars => {
+                        const tbody = document.getElementById('scholars-body');
+                        tbody.innerHTML = ''; // Clear previous entries
+                        scholars.forEach(scholar => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `<td>${scholar.scholar_id}</td><td>${scholar.name}</td>`;
+                            tbody.appendChild(row);
+                        });
+                        document.getElementById('scholars-table').style.display = 'table'; // Show the table
+                    })
+                    .catch(error => {
+                        console.error('Error fetching scholars:', error);
+                    });
+            });
+        </script>
+        
+    </body>
+    </html>

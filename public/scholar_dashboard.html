@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholar Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+</head>
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="./pictures/logo.png" alt="GRC Logo">
+            <div id="greeting" class="greeting">Good Day!</div>
+        </div>
+        <div class="header-right">
+            <div class="menu">
+                <button class="menu-button" onclick="toggleDropdown('mainMenu')">☰</button>
+                <div id="mainMenu" class="dropdown-content">
+                    <div id="loginMenu" class="dropdown-submenu">
+                        <button class="menu-button" onclick="toggleDropdown('monitoringMenu')">Settings</button>
+                        <div id="monitoringMenu" class="dropdown-submenu">
+                            <button onclick="window.location.href='change_pass.html'">Change Password</button>
+                            <button onclick="confirmDeleteAccount()">Delete Account</button>
+                        </div>
+                    </div>
+                    <button onclick="window.location.href='scholar.html'">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="button-container">
+        <button id="gratisButton" onclick="showScholarData()">Gratis</button>
+        <button id="showQRCodeBtn" onclick="toggleQRCode()">QR Code</button>
+        <button id="myScheduleBtn" onclick="showSchedule()">My Schedule</button>
+        <button id="myFellowshipBtn" onclick="showFellowshipData()">Fellowship</button>
+    </div>
+
+    <div id="scheduleInfo" style="display: none;"></div>
+
+    <div id="space">
+        <div id="qrCodeSection" style="display: none;">
+            <h3>Your QR Code:</h3>
+            <img id="qrCodeImage" src="" alt="QR Code" />
+        </div>
+    </div>
+
+    <h1 id="scholarDashboard" style="display: none;">Scholar Dashboard</h1>
+
+    <table id="logTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Total Duty Time</th>
+            </tr>
+        </thead>
+        <tbody id="logTableBody">
+            <!-- Records will be populated here -->
+        </tbody>
+    </table>
+    
+
+    <div id="totalTimeSection" style="display: none;">
+        <h2>Total Time: <span id="totalTimeValue">00:00:00</span></h2><br>
+        <div id="completion-status"></div>
+    </div>
+    
+    <table id="fellowshipTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Scholar Name</th>
+                <th>Church</th>
+                <th>Fellowship</th>
+            </tr>
+        </thead>
+        <tbody id="fellowshipTableBody">
+        <!-- Fellowship records will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <!-- Display Total Fellowship below the table -->
+    <div id="totalFellowshipSection" style="display: none;">
+        <h2>Total Fellowship: <span id="totalFellowshipValue">0</span></h2>
+    </div>
+    
+    <!-- Certificate Section -->
+    <div id="certificateSection" style="display: none; text-align: center;">
+        <h2>Certificate of Completion</h2>
+        <p>This certificate is hereby presented to</p>
+        <h1 id="scholarNameDisplay"></h1>
+        <p>Congratulations for completing the Gratis program with a total of <span id="totalFellowshipDisplay"></span> seconds.</p>
+        <p>Date Issued: <span id="dateIssued"></span></p>
+        <button id="downloadCertificateButton" onclick="downloadCertificate()">Download Certificate</button>
+    </div>
+    
+    <script src="dashboard.js"></script>
+    <script src="delete_account.js"></script>
+</body>
+</html>

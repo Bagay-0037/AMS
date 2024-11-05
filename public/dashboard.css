@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background */
+body {
+    background-image: url('./pictures/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Full-width header */
+header {
+    background-color: #dd2232;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo styling */
+img {
+    max-height: 50px;
+    margin-right: 20px;
+}
+
+/* Greeting text beside the logo */
+.greeting {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Right-aligned menu */
+.header-right {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+/* Menu button (☰) styling */
+.menu-button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Submenu items */
+.dropdown-content button, .dropdown-content a {
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Top-level dropdown buttons */
+.dropdown-content .menu-button {
+    background-color: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover effect for main buttons */
+.dropdown-content .menu-button:hover,
+.dropdown-content button:hover,
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show submenu when hovering */
+.menu-button:focus + .dropdown-submenu,
+.menu-button:hover + .dropdown-submenu,
+.dropdown-submenu:hover {
+    display: block;
+}
+
+/* Show dropdown on button click */
+.menu-button:focus + .dropdown-content,
+.menu-button:hover + .dropdown-content {
+    display: block;
+}
+
+/* Transition effect */
+.dropdown-content {
+    transition: display 0.5s ease;
+}
+
+
+/* Centered button container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    margin: 20px 0;
+}
+
+/* Button Styling */
+#gratisButton, #showQRCodeBtn, #myScheduleBtn, #myFellowshipBtn {
+    background-color: lavender;
+    border: 2px solid gray;
+    color: gray;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px; /* Increased font size for better visibility */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+#gratisButton:hover,#showQRCodeBtn:hover,#myScheduleBtn:hover,#myFellowshipBtn:hover {
+    background-color: gray;
+    color: white;
+}
+
+#scholarDashboard {
+    color: black;
+    text-align: center;
+}
+
+
+
+/* Table styling */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header */
+table th {
+    padding: 15px;
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+/* Table rows */
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Last row without border */
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Total time section */
+#totalTimeSection, #totalFellowshipSection {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+#space {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center; 
+}
+/* Styling for QR Code section */
+#qrCodeSection {
+    width: 100%; /* Make the div take full width, or adjust as needed */
+    height: auto; /* Adjust height based on content */
+    max-width: 190px; /* Set a max-width for the div (optional) */
+    padding: 20px;
+ /* Vertically center the QR code */
+}
+
+#qrCodeImage {
+    max-width: 100%; /* QR code will scale to fit the div width */
+    max-height: 100%; /* QR code will scale to fit the div height */
+    object-fit: contain; /* Keep the aspect ratio while fitting inside */
+}
+#scheduleInfo {
+    background-color: #f9f9f9; /* Softer background color #dd2232 */
+    color: #333; /* Dark gray text for better readability */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px; /* More padding for a modern look */
+    box-shadow: 0 8px 16px rgba(232, 19, 19, 0.15); /* Deeper shadow for modern style */
+    border-radius: 12px; /* Slightly more rounded corners */
+    width: 250px;
+    height: 270px; /* Increased width for better content display */
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    font-size: 14px; /* Adjusted font size */
+    transition: all 0.3s ease-in-out; /* Smooth transition for showing/hiding */
+}
+
+#scheduleInfo h1 {
+    color: gray; /* Use a modern blue color for the title */
+    font-size: 18px; /* Larger font size for the title */
+    margin-bottom: 10px;
+}
+
+#scheduleInfo p {
+    color: #555; /* Softer color for the paragraph text */
+    margin: 5px 0;
+}
+
+#scheduleInfo h5 {
+    color: #888; /* Light gray color for section labels */
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#scheduleInfo strong {
+    font-weight: bold;
+    color: #333; /* Stronger contrast for highlighted text */
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    text-align: center;
+    border-radius: 5px;
+}
+#certificateSection {
+    width: 100%; /* Set width as needed */
+    max-width: 800px; /* Limit max width */
+    margin: 0 auto; /* Center it on the page */
+    padding: 20px; /* Add some padding */
+    border: 2px solid #000; /* Optional border for better visibility */
+    display: none; /* Initially hidden until displayed */
+    text-align: center; /* Center the text */
+    background-color: #f9f9f9; /* Optional background color */
+}
+
+
+
+
+
+/* Responsive Design for mobile screens */
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: row; /* Keep header elements in a row */
+        justify-content: space-between; /* Keep menu on the right */
+        height: auto;
+        padding: 10px;
+        width: 100%;
+        position: fixed;
+        top: 0; /* Ensure the header sticks to the top */
+        left: 0; /* Ensure it aligns with the viewport */
+        margin: 0; /* Remove any margin to prevent spacing */
+        z-index: 10; /* Ensure it stays above other elements */
+    }
+
+    /* Add padding to the body or main content to prevent overlap with the header */
+    body, main {
+        padding-top: 70px; /* Adjust this value based on the header's height */
+    }
+
+    .greeting {
+        font-size: 20px;
+    }
+    .header-right {
+        position: static; /* Ensure it stays at the end of the row */
+        right: 0; /* Keep the menu on the right */
+    }
+
+    .menu-button {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .dropdown-content {
+        min-width: 100%;
+        right: 0;
+    }
+
+    .button-container {
+        display: flex; /* Use flexbox to align buttons */
+        justify-content: space-around; /* Equal spacing around buttons */
+        align-items: center; /* Center items vertically */
+        margin-top: 10px; /* Optional: add some spacing from the header */
+    }
+
+    /* Ensure the buttons have the same width if needed */
+    #gratisButton, #showQRCodeBtn {
+        flex: 1; /* Make buttons take equal space */
+        margin: 0 5px; /* Optional: add some horizontal spacing between buttons */
+        padding: 10px; /* Add padding for better touch area */
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+

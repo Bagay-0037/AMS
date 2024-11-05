@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background */
+body {
+    background-image: url('./pictures/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Full-width header */
+header {
+    background-color: #dd2232;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo styling */
+img {
+    max-height: 50px;
+    margin-right: 20px;
+}
+
+/* Greeting text beside the logo */
+.greeting {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Right-aligned menu */
+.header-right {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+/* Menu button (☰) styling */
+.menu-button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Submenu items */
+.dropdown-content button, .dropdown-content a {
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Top-level dropdown buttons */
+.dropdown-content .menu-button {
+    background-color: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover effect for main buttons */
+.dropdown-content .menu-button:hover,
+.dropdown-content button:hover,
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show submenu when hovering */
+.menu-button:focus + .dropdown-submenu,
+.menu-button:hover + .dropdown-submenu,
+.dropdown-submenu:hover {
+    display: block;
+}
+
+/* Show dropdown on button click */
+.menu-button:focus + .dropdown-content,
+.menu-button:hover + .dropdown-content {
+    display: block;
+}
+
+/* Transition effect */
+.dropdown-content {
+    transition: display 0.5s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    margin: 20px 0;
+}
+#membersButton,#personnelButton {
+    background-color: lavender;
+    border: 2px solid gray;
+    color: gray;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px; /* Increased font size for better visibility */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+#membersButton:hover,#personnelButton:hover {
+    background-color: gray;
+    color: white;
+}
+
+/* Table styling */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header */
+table th {
+    padding: 15px;
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+/* Table rows */
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Last row without border */
+table tr:last-child td {
+    border-bottom: none;
+}

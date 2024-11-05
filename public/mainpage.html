@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Attendance Monitoring System</title>
+    <link rel="stylesheet" href="mp.css">
+</head>
+<body>
+    <header>
+        <!--Left-->
+        <div class="header-content">
+            <img src="./pictures/logo.png" alt="grc logo" />
+            <div id="greeting" class="greeting">Good Day!</div>
+        </div>
+        <!--Right-->
+        <div class="header-right">
+            <div class="menu">
+                <button class="menu-button" onclick="toggleDropdown('mainMenu')">☰</button>
+                <div id="mainMenu" class="dropdown-content">
+                    <button class="menu-button" onclick="toggleDropdown('loginMenu')">Login</button>
+                    <div id="loginMenu" class="dropdown-submenu">
+                        <a href="admin_login.html">Admin</a>
+                        <a href="scholar.html">Scholar</a>
+                        <a href="ch_admin_login.html">Church Admin</a>
+                        <a href="dept_admin_login.html">Department Admin</a>
+                        <button class="menu-button" onclick="toggleDropdown('monitoringMenu')">Monitoring</button>
+                        <div id="monitoringMenu" class="dropdown-submenu">
+                            <a href="dept_personnel_login.html">Department Personnel</a>
+                            <a href="ch_personnel_login.html">Church Personnel</a>
+                        </div>
+                    </div>
+                    <a href="signup.html">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="button-container">
+        <button onclick="showContent('whats-new')">What's New</button>
+        <button onclick="showContent('about')">About</button>
+        <button onclick="showContent('contact')">Contact Us</button>
+    </div>
+
+    <section id="whats-new" class="content hidden-content">
+        <div id="whatsNewContainer" class="whats-new-container">
+            <!-- Files will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <main>
+        <section id="about" class="content hidden-content">
+            <div class="about-container">
+                <h2 class="section-title">Objective</h2>
+                <p class="section-text">The primary objective of this system is to enhance the existing framework of the MLALAF Scholarship Program. This scholarship attendance monitoring system aims to streamline data retrieval processes and improve overall efficiency.</p>
+                
+                <h2 class="section-title">Project Overview</h2>
+                <p class="section-text">The Scholarship Attendance Monitoring System is a proposed solution for the course "System Integration and Architecture 2," under the guidance of Mrs. Arlene Garcia. This system is designed to address the current challenges within the Mlalaf Scholarship Program by organizing data more effectively and providing a more efficient approach to attendance monitoring.</p>
+            </div>
+        </section>
+        
+
+        <section id="contact" class="content hidden-content">
+            <div class="contact-info">
+                <div class="contact-section">
+                    <div class="img1"></div> <!-- No <img> tag needed -->
+                    <div class="img-info1">
+                        <h2 class="logo-title">MLALAF</h2>
+                        <button class="logo-button1"><a href ="https://www.facebook.com/MotortradeLaLaF/" style="text-decoration: none;">Contact Us</a></button>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <div class="img2"></div> <!-- Placeholder for the second section -->
+                    <div class="img-info2">
+                        <h2 class="logo-title">Global Reciprocal Colleges</h2>
+                        <button class="logo-button"><a href ="https://grc.edu.ph/" style="text-decoration: none;">Contact Us</a></button>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <div class="img3"></div> <!-- Placeholder for the third section -->
+                    <div class="img-info3">
+                        <h2 class="logo-title">GRC Computer Studies</h2>
+                        <button class="logo-button"><a href ="https://www.facebook.com/GRCCollegeofComputerStudies/" style="text-decoration: none;">Contact Us</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+    </main>
+
+    <script src="mainpage.js"></script>
+</body>
+</html>

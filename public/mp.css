@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background */
+body {
+  background-image: url('./pictures/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Full-width header */
+header {
+  background-color: #dd2232;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Flexbox for the content inside the header */
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo styling */
+img {
+  max-height: 50px;
+  margin-right: 20px;
+}
+
+/* Greeting text beside the logo */
+.greeting {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Right-aligned menu */
+.header-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Menu button (☰) styling */
+.menu-button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+/* Submenu items */
+.dropdown-content a {
+  color: black;
+  padding: 12px 20px;  
+  text-decoration: none;
+  display: block;
+  text-align: left;  
+  width: 100%;  
+  box-sizing: border-box;
+}
+
+/* Top-level dropdown buttons (e.g. Login, Monitoring) */
+.dropdown-content .menu-button {
+  background-color: white;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Hover effect for main buttons */
+.dropdown-content .menu-button:hover {
+  background-color: #ccc;  
+}
+
+/* Hover effect for submenu items */
+.dropdown-content a:hover {
+  background-color: #999;  
+}
+
+/* Show submenu when hovering */
+.menu-button:hover + .dropdown-submenu,
+.dropdown-submenu:hover {
+  display: block;
+}
+
+/* Ensure hover spans entire width */
+.dropdown-content a {
+  text-align: left; 
+}
+
+/* Show dropdown on button click */
+.menu-button:focus + .dropdown-content,
+.menu-button:hover + .dropdown-content {
+  display: block;
+}
+
+.button-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center; /* Center the buttons */
+}
+
+.button-container button {
+  background-color: lavender;
+  border: 2px solid gray;
+  color: gray;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.button-container button:hover {
+  background-color: gray;
+  color: white;
+}
+
+/* Center content in About section */
+#about .centered {
+  text-align: center;
+}
+
+/* Styling for the contact section */
+.contact-info {
+  display: flex;
+  flex-direction: row; /* Aligns the sections horizontally */
+  justify-content: space-between; /* Distributes the sections evenly */
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px; /* Limits the width */
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(230, 17, 17, 0.2);
+  height: 400px; /* Fixed height */
+}
+
+.contact-section {
+  flex: 1; /* Ensures each section takes equal space */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  margin-right: 10px;
+  position: relative; /* Position relative for absolute positioning of the image */
+}
+
+.contact-section:last-child {
+  margin-right: 0; /* Removes margin from the last section */
+}
+.img1 {
+  background-image: url('./pictures/mlalaf.jfif'); /* Background image */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  width: 100%; /* Full width of the section */
+  height: 200px; /* Set a height for the div (adjust as needed) */
+  border-radius: 8px 8px 8px 8px; /* Optional: rounded top corners */
+}
+.img2 {
+  background-image: url('./pictures/grc.jpg'); /* Background image */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  width: 100%; /* Full width of the section */
+  height: 200px; /* Set a height for the div (adjust as needed) */
+  border-radius: 8px 8px 8px 8px; /* Optional: rounded top corners */
+}
+.img3 {
+  background-image: url('./pictures/images.jfif'); /* Background image */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  width: 100%; /* Full width of the section */
+  height: 200px; /* Set a height for the div (adjust as needed) */
+  border-radius: 8px 8px 8px 8px; /* Optional: rounded top corners */
+}
+
+
+.contact-section {
+  flex: 1; /* Ensures each section takes equal space */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  margin-right: 10px;
+  position: relative; /* Position relative for absolute positioning */
+}
+
+.contact-section:last-child {
+  margin-right: 0; /* Removes margin from the last section */
+}
+
+.img-info1 {
+  text-align: center; /* Centers the text */
+  padding: 10px 0; /* Adds space around the text */
+  color: #fff; /* Changes text color to white (adjust as needed) */
+}
+.img-info2 {
+  text-align: center; /* Centers the text */
+  padding: 10px 0; /* Adds space around the text */
+  color: #fff; /* Changes text color to white (adjust as needed) */
+}
+.img-info3 {
+  text-align: center; /* Centers the text */
+  padding: 10px 0; /* Adds space around the text */
+  color: #fff; /* Changes text color to white (adjust as needed) */
+}
+
+.hidden-content {
+  display: none; /* Ensure hidden sections are not displayed */
+}
+
+.shown {
+  display: block; /* Display sections that are shown */
+  text-align: center; /* Center text in shown sections */
+}
+.centered {
+  text-align: center; /* Center the text */
+  color: white; /* Set text color to white */
+}
+
+.section-title {
+  font-size: 24px; /* Adjust the size of the title */
+  margin-bottom: 10px; /* Add some space below the title */
+}
+
+.section-text {
+  font-size: 16px; /* Adjust the size of the subtext */
+  margin: 0 auto; /* Center the text block */
+  max-width: 800px; /* Set a maximum width for better readability */
+}
+
+/*about*/
+#about {
+  padding-top: 20px; /* Add padding to the top of the section */
+}
+.about-container {
+  background-color: rgba(255, 255, 255, 0.1); /* Lightly tinted background */
+  padding: 20px;
+  border-radius: 8px; /* Optional: Rounded corners */
+  margin: 20px auto;
+  max-width: 800px; /* Limit width for better readability */
+  text-align: center; /* Center-align text */
+  box-shadow: 0 4px 8px rgba(230, 17, 17, 0.2); /* Subtle shadow for depth */
+}
+
+.section-title {
+  font-size: 24px; /* Make title larger */
+  color:  gray; /* White text color */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.section-text {
+  font-size: 16px; /* Subtext size */
+  color:  gray; /* White text color */
+  margin-bottom: 20px; /* Space below each paragraph */
+}
+
+.logo-title {
+  font-size: 24px; /* Make title larger */
+  color:  gray; /* White text color */
+  margin-top: 10px; 
+  text-align: center;
+}
+.logo-button {
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center;
+  margin-top: 15px;
+  background-color: lavender;
+  border: 2px solid gray;
+  color: gray;
+  height: 45px;
+  width: 100px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo-button1 {
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center;
+  margin-top: 25px;
+  background-color: lavender;
+  border: 2px solid gray;
+  color: gray;
+  height: 45px;
+  width: 100px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.logo-button:hover,.logo-button1:hover {
+  background-color: gray;
+  color: white;
+}
+.logo-button a, .logo-button1 a{
+  color: gray;
+}
+.logo-button a:hover, .logo-button1 a:hover {
+  color: white;
+}
+
+/* Media query for tablets (screen width less than 768px) */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column; /* Stack the sections vertically */
+    height: auto; /* Adjust height to be dynamic */
+    max-width: 100%; /* Full width */
+    padding: 10px;
+  }
+
+  .contact-section {
+    margin-bottom: 20px; /* Add space between sections */
+    height: auto; /* Remove fixed height */
+  }
+
+  .img1, .img2, .img3 {
+    height: 150px; /* Reduce image height */
+  }
+
+  .logo-button, .logo-button1 {
+    width: 100%; /* Make buttons take full width */
+    height: 40px; /* Adjust button height */
+  }
+}
+
+/* Media query for mobile phones (screen width less than 480px) */
+@media (max-width: 480px) {
+  .img1, .img2, .img3 {
+    height: 120px; /* Further reduce image height */
+  }
+
+  .logo-title {
+    font-size: 20px; /* Reduce logo title font size */
+  }
+
+  .logo-button, .logo-button1 {
+    height: 35px; /* Further adjust button height */
+  }
+}
+
+.whats-new-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align images at the top */
+  margin-top: 20px;
+  width: 100%;
+  height: 500px;
+  max-height: 500px; /* Set a fixed maximum height */
+  overflow-y: auto; /* Allow vertical scrolling */
+  border: 2px solid #ccc; /* Optional: Add a border to see the container */
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow */
+}
+
+.img-container {
+  margin: 20px 0; /* Adds some space between images */
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+}
+
+.uploaded-image {
+  max-width: 100%; /* Set the max width of the image to fit the container */
+  max-height: 300px; /* Set a max height for the image */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  border: 2px solid #333; /* Adds a solid border around the image */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
+  padding: 10px;
+  background-color: #fff;
+}
+
+.hidden-content {
+  display: none;
+}
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings</title>
+    <style>
+        /* Global styles */
+
+        
+
+        body {
+            background-image: url('./pictures/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            width: 100vw;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Main container */
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+
+        /* Label and input styling */
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .apply-btn {
+            background-color: #dd2232;
+            color: white;
+        }
+
+        .restore-btn {
+            background-color: #d3d3d3;
+            color: black;
+        }
+
+        /* Hover effects for buttons */
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+    <script>
+        // Default threshold value in hours
+        let defaultThreshold = 60;
+
+        // Function to update the completion threshold and store it in localStorage
+        function applyThreshold() {
+            const inputHours = document.getElementById('hoursInput').value;
+            if (inputHours && inputHours > 0) {
+                const completionThreshold = inputHours * 3600;
+                localStorage.setItem('completionThreshold', completionThreshold); // Save in localStorage
+                alert(`Threshold updated to ${inputHours} hours.`);
+            } else {
+                alert("Please enter a valid number of hours.");
+            }
+        }
+
+        // Function to restore the default threshold value
+        function restoreDefault() {
+            const completionThreshold = defaultThreshold * 3600;
+            localStorage.setItem('completionThreshold', completionThreshold); // Save default in localStorage
+            document.getElementById('hoursInput').value = defaultThreshold; // Reset the input field
+            alert(`Threshold restored to default (${defaultThreshold} hours).`);
+        }
+
+        // Initialize the value in the input based on localStorage or default
+        window.onload = function() {
+            const savedThreshold = localStorage.getItem('completionThreshold');
+            if (savedThreshold) {
+                document.getElementById('hoursInput').value = savedThreshold / 3600; // Set input to stored value
+            } else {
+                document.getElementById('hoursInput').value = defaultThreshold; // Default value
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Completion Threshold Settings</h2>
+        
+        <!-- Input for hours -->
+        <label for="hoursInput">Hours: </label>
+        <input type="number" id="hoursInput" min="1" value="60">
+        
+        <!-- Apply and Restore buttons -->
+        <button class="apply-btn" onclick="applyThreshold()">Apply</button>
+        <button class="restore-btn" onclick="restoreDefault()">Restore Default</button>
+    </div>
+</body>
+</html>

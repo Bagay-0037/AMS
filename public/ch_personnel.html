@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Personnel Dashboard</title>
+
+    <script src="html5-qrcode.min.js"></script>
+    <script src="ch_scanner.js" defer></script> <!-- Link to the external JS file -->
+    <style>
+        /* Styling for the container */
+        .container {
+            margin-bottom: 20px; /* Add space below container */
+            clear: both; /* Ensure it doesn't float next to anything */
+            text-align: center; /* Center the text in the container */
+        }
+
+        /* Button styling */
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the table that will display the members */
+        #membersTable {
+            width: 80%;
+            margin: 20px auto; /* Center the table on the page */
+            border-collapse: collapse;
+        }
+
+        /* Styling for table headers and cells */
+        #membersTable th, #membersTable td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        /* Table header styling */
+        #membersTable th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Add hover effect on table rows */
+        #membersTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Hide the member list initially */
+        #membersList {
+            display: none;
+        }
+
+        /* Notification styling */
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Church Personnel Dashboard</h2>
+        <button onclick="window.location.href='ch_scanner.html'">Scanner</button>
+        <button id="members">Members</button>
+        
+        <div id="scannerSection" style="display: none;">
+            <h3>QR Code Scanner</h3>
+            <div id="reader" width="600px"></div>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <!-- Members list placed below the container div using a table -->
+    <div id="membersList">
+        <h3 style="text-align: center;">Members of Your Church</h3>
+        <table id="membersTable">
+            <thead>
+                <tr>
+                    <th>Scholar ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody id="scholarList">
+                <!-- Scholar data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

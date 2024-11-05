@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Admin</title>
+    <link rel="stylesheet" href="ch_admin.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="./pictures/logo.png" alt="GRC Logo">
+            <div id="greeting" class="greeting">Good Day!</div>
+        </div>
+        <div class="header-right">
+            <div class="menu">
+                <button class="menu-button" onclick="toggleDropdown('mainMenu')">☰</button>
+                <div id="mainMenu" class="dropdown-content">
+                    <button onclick="window.location.href='ch_admin_login.html'">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- New Buttons for Members and Personnel -->
+    <div class="button-container">
+        <button id="membersButton" onclick="fetchMembers()">Church Members</button>
+        <button id="personnelButton" onclick="fetchPersonnel()">Church Personnel</button>
+    </div>
+
+    <!-- Section to Display Results in a Table -->
+    <div id="results" class="results-container">
+        <!-- Table will be dynamically inserted here -->
+    </div>
+
+    <script src="ch_admin.js"></script>
+</body>
+</html>

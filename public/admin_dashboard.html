@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="./pictures/logo.png" alt="GRC Logo">
+            <div id="greeting" class="greeting">Good Day!</div>
+        </div>
+        <div class="header-right">
+            <div class="menu">
+                <button class="menu-button" onclick="toggleDropdown('mainMenu')">☰</button>
+                <div id="mainMenu" class="dropdown-content">
+                    <button onclick="window.location.href='admin.html'">Change Completion Time</button>
+                    <button onclick="window.location.href='admin_login.html'">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="buttons">
+        <button id="DepartmentAdmin" onclick="showDepartmentAdmin()">Department Admin</button>
+        <button id="ChurchAdmin" onclick="showChurchAdmin()">Church Admin</button>
+        <button id="Scholars" onclick="showScholars()">Scholars</button>
+    
+        <button id="UploadNews" onclick="document.getElementById('fileInput').click()">Upload What's New</button>
+        <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="uploadFile(event)">
+    
+        <button id="deletePostButton" onclick="showDeletePost()">Delete Post</button>
+    </div>
+    
+    <section id="whats-new" class="content hidden-content">
+        <div id="whatsNewContainer" class="whats-new-container"></div>
+    </section>
+    
+    <section id="delete-post-section" class="content hidden-content">
+        <div id="deletePostContainer" class="delete-post-container">
+            <!-- Content for deleting posts will go here -->
+
+            <div id="deletePosts"></div>
+        </div>
+    </section>
+    
+    <!-- Section where the admin data will be displayed -->
+    <div id="admin-info"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
